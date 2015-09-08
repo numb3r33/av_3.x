@@ -75,7 +75,7 @@ def gradient_boosting_classifier(features, y):
 
 	"""
 
-	est = GradientBoostingClassifier(n_estimators=200, learning_rate=0.1, max_depth=4, subsample=0.9).fit(features, y)
+	est = GradientBoostingClassifier(learning_rate=0.1, n_estimators=100).fit(features, y)
 	return est
 
 

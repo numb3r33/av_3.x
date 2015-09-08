@@ -23,6 +23,9 @@ def feature_selection(train, y):
 	feat_imp = clf_et.feature_importances_
 	sorted_fi = feat_imp[np.argsort(feat_imp)[::-1]] #descending sort
 
+	print 'feature importance: ', feat_imp 
+	print 'sorted feature importances: ', sorted_fi
+
 	clf_gb = GradientBoostingClassifier()
 	feats_tot = xtrain.shape[1]
 
@@ -44,7 +47,7 @@ def feature_selection(train, y):
 			f1_best = f1
 			np.save('./features/clf_sel.npy',select)
 		print feats,f1,roc_pred,roc_prob
-		if feats >= 10:
+		if feats >= 16:
 			break
 
 	print "f1_best:", f1_best
