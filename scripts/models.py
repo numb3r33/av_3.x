@@ -17,7 +17,7 @@ def baseline_prediction(train, test):
 
 def logistic_regression(features, y):
 	"""
-	
+
 	Fits a logistic regression model on the data
 	Args:
 		features: [[x11, x12, ...], [x21, x22, ...]]
@@ -25,7 +25,7 @@ def logistic_regression(features, y):
 
 	Returns:
 		model: Logistic Regression model
-	
+
 	"""
 
 	est = LogisticRegression(C=1.0, class_weight='auto').fit(features, y)
@@ -43,7 +43,7 @@ def random_forest_classifier(features, y):
 
 	"""
 
-	est = RandomForestClassifier(n_estimators=300, class_weight='auto', oob_score=True).fit(features, y)
+	est = RandomForestClassifier(n_estimators=300, oob_score=True).fit(features, y)
 	return est
 
 
@@ -82,7 +82,7 @@ def gradient_boosting_classifier(features, y):
 
 def predictions(model, features_test):
 	"""
-	
+
 	Takes in a model and returns predictions
 
 	Args:
