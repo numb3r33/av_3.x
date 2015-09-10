@@ -43,7 +43,7 @@ def ranked_averaging(predictions):
 	ranked_ranks = []
 
 	for rank, k in enumerate(sorted(average_ranks)):
-		ranked_ranks.append((k[1][0],k[1][1],rank/(len(average_ranks)-1)))
+		ranked_ranks.append((k[1][0],k[1][1],(rank * 1.)/(len(average_ranks)-1)))
 	return sorted(ranked_ranks)
 
 

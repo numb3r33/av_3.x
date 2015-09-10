@@ -43,7 +43,7 @@ def random_forest_classifier(features, y):
 
 	"""
 
-	est = RandomForestClassifier(n_estimators=300, class_weight='auto', oob_score=True).fit(features, y)
+	est = RandomForestClassifier(n_estimators=150, class_weight='auto', min_samples_split=5, max_depth=10).fit(features, y)
 	return est
 
 
@@ -59,7 +59,7 @@ def linear_svc(features, y):
 
 	"""
 
-	est = LinearSVC(C=.1, class_weight='auto').fit(features, y)
+	est = LinearSVC(C=.05, class_weight='auto').fit(features, y)
 	return est
 
 
@@ -75,7 +75,7 @@ def gradient_boosting_classifier(features, y):
 
 	"""
 
-	est = GradientBoostingClassifier(learning_rate=0.1, n_estimators=100).fit(features, y)
+	est = GradientBoostingClassifier(learning_rate=0.05, n_estimators=300, min_samples_split=5, max_depth=3).fit(features, y)
 	return est
 
 
